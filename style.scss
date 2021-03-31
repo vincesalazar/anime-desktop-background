@@ -1,0 +1,69 @@
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+.loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("./jeez.jpg") center;
+    background-color: black;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+.one {
+    background: url("https://media.giphy.com/media/f5UwtpUbrAEE0/giphy.gif") center;
+}
+
+.two {
+    background: url("https://media.giphy.com/media/xolFgrZj5nvzi/giphy.gif") center;
+}
+
+.three {
+    background: url("https://media.giphy.com/media/fSMx5JkuXXfWTsyMRw/giphy.gif") center;
+}
+
+.four {
+    background: url("https://media.giphy.com/media/3ohzdD7eLeRtCqZsR2/giphy.gif") center;
+}
+
+.five {
+    background: url("https://media.giphy.com/media/WOb8EeFziTQNE02WXs/giphy.gif") center;
+}
+
+.six {
+    background: url("https://media.giphy.com/media/AhuULvcupAMCbsMmDI/giphy.gif") center;
+}
+
+.seven {
+    background: url("https://media.giphy.com/media/MIpkjNrkJiCXu/giphy.gif") center;
+}
+
+.eight {
+    background: url("https://media.giphy.com/media/nvPNlAagUMWn6/giphy.gif") center;
+}
+
+.nine {
+    background: url("https://media.giphy.com/media/xULW8Nl1xnX0QGqwI8/giphy.gif") center;
+}
+
+.box {
+    width: 33.33%;
+    height: 33.33%;
+    background-size: cover;
+    position: relative;
+}
+
+.exit{
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0);
+    display: none;
+}

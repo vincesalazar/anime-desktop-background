@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Uhhhh</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="loading" style="opacity: 0; display: none;"></div>
+    <div class="box one" id="s"><div class="exit"></div></div>
+    <div class="box two" id="s"><div class="exit"></div></div>
+    <div class="box three" id="s"><div class="exit"></div></div>
+    <div class="box four" id="s"><div class="exit"></div></div>
+    <div class="box five" id="s"><div class="exit"></div></div>
+    <div class="box six" id="s"><div class="exit"></div></div>
+    <div class="box seven" id="s"><div class="exit"></div></div>
+    <div class="box eight" id="s"><div class="exit"></div></div>
+    <div class="box nine" id="s"><div class="exit"></div></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js" integrity="sha512-1dalHDkG9EtcOmCnoCjiwQ/HEB5SDNqw8d4G2MKoNwjiwMNeBAkudsBCmSlMnXdsH8Bm0mOd3tl/6nL5y0bMaQ==" crossorigin="anonymous"></script>
+    <script>
+        window.addEventListener("load", () => {
+            let tl = gsap.timeline()
+            var loadPage = document.querySelector(".loading")
+            tl.to(loadPage, .5, {
+                opacity: 0
+            })
+            tl.to(loadPage, .2, {
+                display: "none"
+            }, "<+1")
+            var s = document.querySelectorAll("#s")
+            s.forEach((e,i) => {
+                e.addEventListener("click", () => {
+                    // e.style.height = "100vh"
+                    // e.style.width = "100vw"
+                    // let tl = gsap.timeline()
+                    // tl.to(e, 1, {width:"100vw", height: "100vh"})
+                    e.requestFullscreen()
+                    e.addEventListener("click", () => {
+                        // e.style.height = "33.33%"
+                        // e.style.width = "33.33%"
+                        // e.style.order = 1
+                        // tl.reverse()
+                        document.exitFullscreen()
+                    })
+                })
+            })
+        });
+        
+    </script>
+
+</body></html>
