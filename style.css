@@ -12,6 +12,18 @@ body {
   overflow-x: hidden;
 }
 
+body::-webkit-scrollbar {
+  width: 7px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #bdbdbd;
+}
+
+body::-webkit-scrollbar-track {
+  background: #333333;
+}
+
 .loading {
   position: absolute;
   top: 0;
