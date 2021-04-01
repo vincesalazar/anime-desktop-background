@@ -68,19 +68,19 @@ body {
   height: 33.33%;
   background-size: cover;
   position: relative;
-  -webkit-transition: -webkit-filter .7s, -webkit-transform .7s;
-  transition: -webkit-filter .7s, -webkit-transform .7s;
-  transition: filter .7s, transform .7s;
-  transition: filter .7s, transform .7s, -webkit-filter .7s, -webkit-transform .7s;
-  -webkit-filter: blur(3px);
-          filter: blur(3px);
+  -webkit-transition: -webkit-filter .5s, -webkit-transform .35s;
+  transition: -webkit-filter .5s, -webkit-transform .35s;
+  transition: filter .5s, transform .35s;
+  transition: filter .5s, transform .35s, -webkit-filter .5s, -webkit-transform .35s;
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
 }
 
 .box:hover {
-  -webkit-filter: blur(0px);
-          filter: blur(0px);
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
 }
 
 .exit {

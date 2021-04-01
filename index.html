@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- <div class="loading" style=""></div> -->
-    <div class="screen"></div>
+    <div class="loading" style=""></div>
+    <div class="screen" onclick="closeScreen()"></div>
     <div class="box one" id="one" onclick="fs(id)"><div class="exit"></div></div>
     <div class="box two" id="two" onclick="fs('two')"><div class="exit"></div></div>
     <div class="box three" id="three" onclick="fs('three')"><div class="exit"></div></div>
@@ -22,13 +22,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/CSSRulePlugin.min.js" integrity="sha512-0bzaetZStCnsUgbCtGVxftzF/L32PNOnrMlYLXwBOKl8cUjTSSDfJVyyJsNwGoI0iE0WUqni2eEfO35kJjFj5g==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollToPlugin.min.js" integrity="sha512-kSI9CgGh60rJbNVeMJvfNX0UTKAq8LEOea/yKJQbFpIroxT7bf9/zUFXbnfsQP5F6xlOOHtCfBPgsE1ceiHnRw==" crossorigin="anonymous"></script>
     <script>
+        function closeScreen(){
+            let screen = document.querySelector(".screen")
+            gsap.to(screen, .25, {scale:0, width:0,height:0})
+            document.querySelectorAll("div").forEach((e,i,p) => {
+                if(e.classList.contains("active")){
+                    e.classList = "box" + " " + e.id
+                }
+            })
+        }
         function fs(g){
-            // console.log(d);
             let div = document.querySelectorAll("div")
             var screen = document.querySelector(".screen")
-            // console.log(div)
-            // var g = d
-            // console.log({"g":g})
             div.forEach((e,i, c, d=g) => {
                 if(e.classList.contains("active")){
                     e.classList = "box" + " " + e.id
@@ -36,19 +41,11 @@
                 let tl = gsap.timeline()
                 if(e.classList.contains(d)){
                     // console.log({'e':e,'c':c,'i':i, 'd':d})
-                    // console.log(e)
-                    // tl.to(e, .5, {position:"absoloute", top:"3rem", left:"3rem", right:"3rem", bottom:"3rem", width:"100%", height:"100%"})
-                    // let screen = document.querySelector(".screen")
                     screen.classList = "screen"+ " " + d
                     e.classList = "box active" + " " + d
                     gsap.to(window, { duration: .5, scrollTo: "body" })
                     tl.fromTo(screen, .35, {scale:0}, {scale:.85, width:"100vw", height:"100vh", backgroundRepeat:"no-repeat", backgroundSize:"cover", ease:"expo out"})
-                    tl.fromTo(screen, .45, {filter:"blur(10px)"}, {filter:"blur(0)"}, "<+.3")
-                    // tl.to("body", .5, {padding:"4rem"}, "<")
-                    screen.addEventListener("click", () => {
-                        gsap.to(screen, .5, {scale:0, width:0,height:0})
-                        e.classList = "box" + " " + e.id
-                    })
+                    tl.fromTo(screen, .4, {filter:"blur(4px)"}, {filter:"blur(0)"}, "<+.3")
                 }
             })
         }
@@ -61,23 +58,6 @@
             tl.to(loadPage, .2, {
                 display: "none"
             }, "<+1")
-            // var s = document.querySelectorAll("#s")
-            // s.forEach((e,i) => {
-            //     e.addEventListener("click", () => {
-            //         // e.style.height = "100vh"
-            //         // e.style.width = "100vw"
-            //         // let tl = gsap.timeline()
-            //         // tl.to(e, 1, {width:"100vw", height: "100vh"})
-            //         e.requestFullscreen()
-            //         e.addEventListener("click", () => {
-            //             // e.style.height = "33.33%"
-            //             // e.style.width = "33.33%"
-            //             // e.style.order = 1
-            //             // tl.reverse()
-            //             document.exitFullscreen()
-            //         })
-            //     })
-            // })
         });
         
     </script>
